@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Caches
+.npm/
+.eslintcache
+.oxlintcache
+.cache/
+.vite/
+
+# Test coverage
+coverage/
+
+# Python / AI layer
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+models/*.pkl
+models/*.pt
+models/*.h5
+
+# Editors and OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Uploads (added later)
+uploads/
+
+# AI layer: trained model files and the project virtualenv
+ai/model/
+ai/.venv/

@@ -1,0 +1,9 @@
+scikit-learn>=1.5
+joblib>=1.4
+
+# Image classification. numpy comes with scikit-learn, Pillow reads the images.
+Pillow>=11
+# torch is a large download (~200 MB) and only the image classifier needs it. The
+# backend falls back to the colour/edge heuristic when it is missing.
+torch>=2.4
+torchvision>=0.19
