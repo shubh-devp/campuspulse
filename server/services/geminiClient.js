@@ -2,7 +2,11 @@ const { GoogleGenAI } = require('@google/genai');
 
 const DEFAULT_MODEL = 'gemini-3.6-flash';
 const DEFAULT_TIMEOUT_MS = 20000;
-const DEFAULT_MAX_OUTPUT_TOKENS = 400;
+// The cap covers the visible answer *and* the model's internal reasoning, which on a
+// thinking model is easily several hundred tokens. At 400 the reasoning used almost all
+// of it and answers were cut off mid-sentence (finishReason MAX_TOKENS), so the cap has
+// to be high enough to leave room for both.
+const DEFAULT_MAX_OUTPUT_TOKENS = 2000;
 // Low: these are summaries of facts, not creative writing
 const DEFAULT_TEMPERATURE = 0.2;
 
