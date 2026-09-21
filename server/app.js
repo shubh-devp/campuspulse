@@ -20,7 +20,9 @@ app.set('trust proxy', 1);
 function corsOptions() {
   const allowed = (process.env.CORS_ORIGIN || '')
     .split(',')
-    .map((origin) => origin.trim())
+    // A pasted origin often carries a trailing slash or surrounding quotes, and a
+    // real origin has neither, so both are removed before the comparison
+    .map((origin) => origin.trim().replace(/^["']|["']$/g, '').replace(/\/+$/, ''))
     .filter(Boolean);
 
   return allowed.length > 0 ? { origin: allowed } : {};
